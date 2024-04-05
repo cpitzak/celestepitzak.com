@@ -54,8 +54,8 @@ export default function DrawerNav({ open, setOpen, selectedItem, handleScrollTo 
     return (
         <Box sx={{ display: 'flex' }}>
             <AppBar position="fixed" open={open}>
-                <Toolbar sx={{ display: 'flex', justifyContent: 'space-between' }}>
-                    <Typography style={{ fontStyle: 'italic' }} variant="h6" noWrap component="div">
+                <Toolbar>
+                    <Typography style={{ fontStyle: 'italic', flexGrow: 1 }} variant="h6" noWrap component="div">
                         Celeste Pitzak
                     </Typography>
                     <IconButton
@@ -63,7 +63,7 @@ export default function DrawerNav({ open, setOpen, selectedItem, handleScrollTo 
                         aria-label="open drawer"
                         onClick={handleDrawerOpen}
                         edge="end"
-                        sx={{ mr: 2, ...(open && { display: 'none' }) }}
+                        sx={{ ...(open && { display: 'none' }) }}
                     >
                         <MenuIcon />
                     </IconButton>
