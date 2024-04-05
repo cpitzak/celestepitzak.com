@@ -32,7 +32,7 @@ const AppBar = styled(MuiAppBar, {
     }),
     ...(open && {
         width: `calc(100% - ${DRAWER_WIDTH}px)`,
-        marginLeft: `${DRAWER_WIDTH}px`,
+        marginRight: `${DRAWER_WIDTH}px`,
         transition: theme.transitions.create(['margin', 'width'], {
             easing: theme.transitions.easing.easeOut,
             duration: theme.transitions.duration.enteringScreen,
@@ -54,19 +54,19 @@ export default function DrawerNav({ open, setOpen, selectedItem, handleScrollTo 
     return (
         <Box sx={{ display: 'flex' }}>
             <AppBar position="fixed" open={open}>
-                <Toolbar>
+                <Toolbar sx={{ display: 'flex', justifyContent: 'space-between' }}>
+                    <Typography style={{ fontStyle: 'italic' }} variant="h6" noWrap component="div">
+                        Celeste Pitzak
+                    </Typography>
                     <IconButton
                         color="inherit"
                         aria-label="open drawer"
                         onClick={handleDrawerOpen}
-                        edge="start"
+                        edge="end"
                         sx={{ mr: 2, ...(open && { display: 'none' }) }}
                     >
                         <MenuIcon />
                     </IconButton>
-                    <Typography style={{ fontStyle: 'italic' }} variant="h6" noWrap component="div">
-                        Celeste Pitzak
-                    </Typography>
                 </Toolbar>
             </AppBar>
             <Drawer
@@ -76,11 +76,12 @@ export default function DrawerNav({ open, setOpen, selectedItem, handleScrollTo 
                     '& .MuiDrawer-paper': {
                         width: DRAWER_WIDTH,
                         boxSizing: 'border-box',
-                        backgroundColor: '#f6eee3'
+                        backgroundColor: '#f6eee3',
+                        right: 0, // Adjusted to align with the right edge of the screen
                     },
                 }}
                 variant="persistent"
-                anchor="left"
+                anchor="right"
                 open={open}
             >
                 <DrawerHeader>

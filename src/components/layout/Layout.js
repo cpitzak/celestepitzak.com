@@ -20,8 +20,14 @@ const Main = styled('main', {
                 easing: theme.transitions.easing.easeOut,
                 duration: theme.transitions.duration.enteringScreen,
             }),
-            // marginLeft: `${DRAWER_WIDTH}px`,
         }),
+        /**
+         * This is necessary to enable the selection of content. In the DOM, the stacking order is determined
+         * by the order of appearance. Following this rule, elements appearing later in the markup will overlay
+         * those that appear earlier. Since the Drawer comes after the Main content, this adjustment ensures
+         * proper interaction with the underlying content.
+         */
+        position: 'relative',
     }));
 
 function Layout({ children, selectedItem, handleScrollTo }) {
