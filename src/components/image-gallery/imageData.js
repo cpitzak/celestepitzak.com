@@ -1,4 +1,3 @@
-import scriptures from '../../assets/img/scriptures_compass.jpg';
 import manMule from '../../assets/img/man_and_mule.jpg';
 import korean from '../../assets/img/korean_princess.jpg';
 import jesusRichMan from '../../assets/img/jesus_rich_young_ruler.jpg';
@@ -46,10 +45,6 @@ export const itemData = [
   {
     img: lincoln,
     title: 'Abraham Lincoln',
-  },
-  {
-    img: scriptures,
-    title: 'Scriptures and the Globe',
   },
   {
     img: cow,
