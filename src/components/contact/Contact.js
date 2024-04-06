@@ -1,7 +1,6 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { styled } from '@mui/material/styles';
-import { TextField, Button, Typography } from "@mui/material";
-import { CONTACT_ID } from "../../App";
+import { TextField, Button, Typography, CircularProgress } from "@mui/material";
 import HCaptcha from "@hcaptcha/react-hcaptcha";
 
 const FormContainer = styled('div')(({ theme }) => ({
@@ -9,7 +8,7 @@ const FormContainer = styled('div')(({ theme }) => ({
     margin: 'auto',
 }));
 
-const StyledForm = styled('div')(({ theme }) => ({
+const StyledForm = styled('form')(({ theme }) => ({
     display: 'flex',
     flexDirection: 'column',
     gap: '16px'
@@ -19,9 +18,23 @@ const SubmitButton = styled(Button)`
   align-self: flex-start;
 `;
 
+const ResultText = styled(Typography)(({ theme, submitted }) => ({
+    textAlign: 'center',
+    color: '#fff',
+    backgroundColor: submitted === "true" ? '#4caf50' : '#f44336',
+    padding: '12px',
+    borderRadius: '4px',
+}));
+
 export default function Contact({ sectionId }) {
     const [result, setResult] = useState("");
     const [captchaToken, setCaptchaToken] = useState("");
+    const [nameError, setNameError] = useState(false);
+    const [emailError, setEmailError] = useState(false);
+    const [messageError, setMessageError] = useState(false);
+    const [isSubmitted, setIsSubmitted] = useState(false);
+    const [isLoading, setIsLoading] = useState(false);
+    const formRef = useRef(null);
 
     const onHCaptchaChange = (token) => {
         setCaptchaToken(token);
@@ -29,9 +42,43 @@ export default function Contact({ sectionId }) {
 
     const onSubmit = async (event) => {
         event.preventDefault();
-        setResult("Sending....");
-        const formData = new FormData(event.target);
+        setIsLoading(true);
 
+        // Extract form field values
+        const name = event.target.name.value.trim();
+        const email = event.target.email.value.trim();
+        const message = event.target.message.value.trim();
+
+        // Validate form fields
+        if (name === "") {
+            setNameError(true);
+            setResult("Name field cannot be blank.");
+            setIsLoading(false);
+            return;
+        }
+        if (email === "") {
+            setEmailError(true);
+            setResult("Email field cannot be blank.");
+            setIsLoading(false);
+            return;
+        }
+        if (message === "") {
+            setMessageError(true);
+            setResult("Message field cannot be blank.");
+            setIsLoading(false);
+            return;
+        }
+        if (captchaToken === "") {
+            setResult("Please complete the captcha.");
+            setIsLoading(false);
+            return;
+        }
+
+        // Create FormData object
+        const formData = new FormData();
+        formData.append("name", name);
+        formData.append("email", email);
+        formData.append("message", message);
         formData.append("access_key", "ffc0694d-27c5-40be-b9fa-5beb798f7208");
         formData.append("h-captcha-response", captchaToken);
 
@@ -44,10 +91,13 @@ export default function Contact({ sectionId }) {
 
         if (data.success) {
             setResult("Form Submitted Successfully");
-            event.target.reset();
+            setIsSubmitted(true);
+            setIsLoading(false);
+            formRef.current.reset(); // Reset the form
         } else {
             console.log("Error", data);
             setResult(data.message);
+            setIsLoading(false);
         }
     };
 
@@ -55,14 +105,23 @@ export default function Contact({ sectionId }) {
         <div id={sectionId}>
             <FormContainer>
                 <Typography variant="h5" gutterBottom>Commission Request Form</Typography>
-                <StyledForm onSubmit={onSubmit}>
-                    <TextField label="Name" name="name" variant="outlined" required />
+                <StyledForm onSubmit={onSubmit} ref={formRef}>
+                    <TextField
+                        label="Name"
+                        name="name"
+                        variant="outlined"
+                        required
+                        error={nameError}
+                        helperText={nameError ? "Name field cannot be blank." : ""}
+                    />
                     <TextField
                         label="Email"
                         name="email"
                         variant="outlined"
                         required
                         type="email"
+                        error={emailError}
+                        helperText={emailError ? "Email field cannot be blank." : ""}
                     />
                     <TextField
                         label="Message"
@@ -71,17 +130,31 @@ export default function Contact({ sectionId }) {
                         multiline
                         required
                         rows={7}
+                        error={messageError}
+                        helperText={messageError ? "Message field cannot be blank." : ""}
                     />
                     <HCaptcha
                         theme={"dark"}
                         sitekey="50b2fe65-b00b-4b9e-ad62-3ba471098be2"
                         onVerify={onHCaptchaChange}
                     />
-                    <SubmitButton type="submit" variant="contained" color="primary">
-                        Submit
-                    </SubmitButton>
+                    {isLoading ? (
+                        <CircularProgress />
+                    ) : (
+                        <>
+                            {result && <ResultText submitted={isSubmitted ? "true" : undefined}>{result}</ResultText>}
+                            {!isSubmitted && (
+                                <SubmitButton
+                                    type="submit"
+                                    variant="contained"
+                                    color="primary"
+                                >
+                                    Submit
+                                </SubmitButton>
+                            )}
+                        </>
+                    )}
                 </StyledForm>
-                <Typography>{result}</Typography>
             </FormContainer>
         </div>
     );
