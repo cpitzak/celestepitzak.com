@@ -13,8 +13,8 @@ import cow from '../../assets/img/cow.jpg';
 export const itemData = [
   {
     img: manMule,
-    title: 'Camera',
-    author: '@helloimnik',
+    title: 'A Man and his Mule',
+    author: '@celeste',
   },
   {
     img: korean,
