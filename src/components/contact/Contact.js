@@ -70,7 +70,7 @@ export default function Contact({ sectionId }) {
                         variant="outlined"
                         multiline
                         required
-                        rows={4}
+                        rows={7}
                     />
                     <HCaptcha
                         theme={"dark"}
