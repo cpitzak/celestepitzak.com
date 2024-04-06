@@ -32,7 +32,7 @@ export default function Contact({ sectionId }) {
         setResult("Sending....");
         const formData = new FormData(event.target);
 
-        formData.append("access_key", "YOUR_ACCESS_KEY_HERE");
+        formData.append("access_key", "ffc0694d-27c5-40be-b9fa-5beb798f7208");
         formData.append("h-captcha-response", captchaToken);
 
         const response = await fetch("https://api.web3forms.com/submit", {
