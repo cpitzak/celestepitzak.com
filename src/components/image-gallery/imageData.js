@@ -14,56 +14,45 @@ export const itemData = [
   {
     img: manMule,
     title: 'A Man and his Mule',
-    author: '@celeste',
   },
   {
     img: korean,
-    title: 'Coffee',
-    author: '@nolanissac',
+    title: 'Asian Lady',
   },
   {
     img: jesusRichMan,
-    title: 'Hats',
-    author: '@hjrc33',
+    title: 'Jesus and the Rich Young Ruler',
   },
   {
     img: girlYouth4,
-    title: 'Breakfast',
-    author: '@bkristastucchio',
+    title: 'Girl and Cat Portrait',
   },
   {
     img: girlYouth3,
-    title: 'Breakfast',
-    author: '@bkristastucchio',
+    title: 'Girl Portrait White Background',
   },
   {
     img: girlYouth1,
-    title: 'Honey',
-    author: '@arwinneil',
+    title: 'Girl Portrait Shadow Background',
   },
   {
     img: girlYouth2,
-    title: 'Basketball',
-    author: '@tjdragotta',
+    title: 'Girl Portrait Field Background',
   },
   {
     img: boyYouth,
-    title: 'Fern',
-    author: '@katie_wasserman',
+    title: 'Boy Portrait Grass Background',
   },
   {
     img: lincoln,
-    title: 'Camera',
-    author: '@helloimnik',
+    title: 'Abraham Lincoln',
   },
   {
     img: scriptures,
-    title: 'Burger',
-    author: '@rollelflex_graphy726',
+    title: 'Scriptures and the Globe',
   },
   {
     img: cow,
-    title: 'Camera',
-    author: '@helloimnik',
+    title: 'Cow',
   },
 ];

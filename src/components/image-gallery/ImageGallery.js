@@ -55,7 +55,7 @@ function ImageGallery({ sectionId }) {
             </IconButton>
             <img
               src={itemData[selectedImageIndex].img} // Use selectedImageIndex to display the current image
-              alt="Selected Image"
+              alt={ImageData[selectedImageIndex].title}
               className={styles.modalImage}
             />
             <IconButton
