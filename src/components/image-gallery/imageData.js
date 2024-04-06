@@ -1,5 +1,5 @@
 import manMule from '../../assets/img/man_and_mule.jpg';
-import korean from '../../assets/img/korean_princess.jpg';
+import asianLady from '../../assets/img/asian_lady.jpg';
 import jesusRichMan from '../../assets/img/jesus_rich_young_ruler.jpg';
 import girlYouth1 from '../../assets/img/girl_youth.jpg';
 import girlYouth2 from '../../assets/img/girl_youth_2.jpg';
@@ -15,7 +15,7 @@ export const itemData = [
     title: 'A Man and his Mule',
   },
   {
-    img: korean,
+    img: asianLady,
     title: 'Asian Lady',
   },
   {

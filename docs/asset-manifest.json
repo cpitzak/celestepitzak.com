@@ -1,12 +1,12 @@
 {
   "files": {
     "main.css": "/static/css/main.d80e567a.css",
-    "main.js": "/static/js/main.b11694b0.js",
+    "main.js": "/static/js/main.cd2eb49c.js",
     "static/js/453.6138d6cc.chunk.js": "/static/js/453.6138d6cc.chunk.js",
     "static/media/cow.jpg": "/static/media/cow.6160257bb5fdfee28f34.jpg",
     "static/media/jesus_rich_young_ruler.jpg": "/static/media/jesus_rich_young_ruler.14aa2a9dfc33b34c9a93.jpg",
     "static/media/lincoln.jpeg": "/static/media/lincoln.8d55d97b38b252a43376.jpeg",
-    "static/media/korean_princess.jpg": "/static/media/korean_princess.fcb6aaeb75fe73bd90f5.jpg",
+    "static/media/asian_lady.jpg": "/static/media/asian_lady.fcb6aaeb75fe73bd90f5.jpg",
     "static/media/man_and_mule.jpg": "/static/media/man_and_mule.c5d9430e2d399ec04025.jpg",
     "static/media/girl_youth_2.jpg": "/static/media/girl_youth_2.bf319dce61203887dbe1.jpg",
     "static/media/girl_youth.jpg": "/static/media/girl_youth.899e619f25f7def57fa7.jpg",
@@ -71,11 +71,11 @@
     "static/media/roboto-greek-ext-700-normal.woff": "/static/media/roboto-greek-ext-700-normal.249853776d22a271b2b5.woff",
     "index.html": "/index.html",
     "main.d80e567a.css.map": "/static/css/main.d80e567a.css.map",
-    "main.b11694b0.js.map": "/static/js/main.b11694b0.js.map",
+    "main.cd2eb49c.js.map": "/static/js/main.cd2eb49c.js.map",
     "453.6138d6cc.chunk.js.map": "/static/js/453.6138d6cc.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.d80e567a.css",
-    "static/js/main.b11694b0.js"
+    "static/js/main.cd2eb49c.js"
   ]
 }
