@@ -54,8 +54,8 @@ function ImageGallery({ sectionId }) {
               <ArrowBackIosIcon />
             </IconButton>
             <img
-              src={itemData[selectedImageIndex].img} // Use selectedImageIndex to display the current image
-              alt={ImageData[selectedImageIndex].title}
+              src={itemData[selectedImageIndex].img}
+              alt={itemData[selectedImageIndex].title}
               className={styles.modalImage}
             />
             <IconButton
