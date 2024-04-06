@@ -1,15 +1,18 @@
 {
   "files": {
     "main.css": "/static/css/main.d80e567a.css",
-    "main.js": "/static/js/main.5ddbdbb8.js",
+    "main.js": "/static/js/main.7678defd.js",
     "static/js/453.6138d6cc.chunk.js": "/static/js/453.6138d6cc.chunk.js",
     "static/media/scriptures_compass.jpg": "/static/media/scriptures_compass.dff0c457e66fbf57d17b.jpg",
-    "static/media/baby_and_doll.jpg": "/static/media/baby_and_doll.d9375e4b0a787d12708e.jpg",
+    "static/media/cow.jpg": "/static/media/cow.6160257bb5fdfee28f34.jpg",
     "static/media/jesus_rich_young_ruler.jpg": "/static/media/jesus_rich_young_ruler.14aa2a9dfc33b34c9a93.jpg",
+    "static/media/lincoln.jpeg": "/static/media/lincoln.8d55d97b38b252a43376.jpeg",
     "static/media/korean_princess.jpg": "/static/media/korean_princess.fcb6aaeb75fe73bd90f5.jpg",
     "static/media/man_and_mule.jpg": "/static/media/man_and_mule.c5d9430e2d399ec04025.jpg",
     "static/media/girl_youth_2.jpg": "/static/media/girl_youth_2.bf319dce61203887dbe1.jpg",
     "static/media/girl_youth.jpg": "/static/media/girl_youth.899e619f25f7def57fa7.jpg",
+    "static/media/girl_youth_4.jpeg": "/static/media/girl_youth_4.058b5ddcec394ee9319e.jpeg",
+    "static/media/girl_youth_3.jpeg": "/static/media/girl_youth_3.946f8afaffd6ad286d8b.jpeg",
     "static/media/boy_youth.jpg": "/static/media/boy_youth.cdd21dcbdac27b599f06.jpg",
     "static/media/roboto-latin-500-normal.woff2": "/static/media/roboto-latin-500-normal.f25d774ecfe0996f8eb5.woff2",
     "static/media/roboto-latin-700-normal.woff2": "/static/media/roboto-latin-700-normal.227c93190fe7f82de3f8.woff2",
@@ -69,11 +72,11 @@
     "static/media/roboto-greek-ext-700-normal.woff": "/static/media/roboto-greek-ext-700-normal.249853776d22a271b2b5.woff",
     "index.html": "/index.html",
     "main.d80e567a.css.map": "/static/css/main.d80e567a.css.map",
-    "main.5ddbdbb8.js.map": "/static/js/main.5ddbdbb8.js.map",
+    "main.7678defd.js.map": "/static/js/main.7678defd.js.map",
     "453.6138d6cc.chunk.js.map": "/static/js/453.6138d6cc.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.d80e567a.css",
-    "static/js/main.5ddbdbb8.js"
+    "static/js/main.7678defd.js"
   ]
 }
